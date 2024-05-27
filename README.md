@@ -19,7 +19,8 @@ used and the other one should be ignored.`
 
 Technologies
 ------------
-- `Spring Boot 3.2.0`
+
+- `Spring Boot 3.3.0`
 - `Java 21`
 - `MySQL` 
 - `Docker`

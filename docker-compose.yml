@@ -1,8 +1,6 @@
-version: '3.8'
 services:
-
   mysql:
-    image: 'mysql:latest'
+    image: 'mysql:8.4.0'
     container_name: coffee-mysql
     restart: always
     network_mode: bridge
@@ -30,17 +28,17 @@ services:
       - './sonarqube/sonarqube_extensions:/opt/sonarqube/extensions'
       - './sonarqube/sonarqube_logs:/opt/sonarqube/logs'
     ports:
-      - '9000:9000'
+      - '9001:9000'
 
   postgres:
-    image: postgres
+    image: postgres:16-alpine3.19
     container_name: postgres
     restart: always
     network_mode: bridge
     volumes:
       - './postgres/postgres_data:/var/lib/postgresql/data'
     ports:
-      - '5432:5432'
+      - '5433:5432'
     environment:
       POSTGRES_DB: sonar
       POSTGRES_USER: sonar
